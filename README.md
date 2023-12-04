@@ -6,10 +6,7 @@ This role can be used to set up Dnsmasq. Specifically, this role can be used to 
 
 This role can be used on Linux systems with:
 
-* the `yum` package manager,
-* `firewalld`, which is used to configure the firewall.
-
-That means a fairly recent Fedora (up to F21), or RedHat/CentOS 7.
+* the `dnf` package manager,
 
 ## Role Variables
 

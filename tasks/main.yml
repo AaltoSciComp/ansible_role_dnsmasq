@@ -1,25 +1,5 @@
-# roles/dnsmasq/tasks/main.yml
 ---
-- name: Install Dnsmasq
-  yum:
-    pkg: dnsmasq
-    state: present
-  when: ansible_os_family == "RedHat"
-  tags: dnsmasq
 
-- name: Set configuration file
-  template:
-    src: etc_dnsmasq.conf.j2
-    dest: /etc/dnsmasq.conf
-    validate: 'dnsmasq --test --conf-file=%s'
-  notify: restart dnsmasq
+- include_tasks: redhat.yml
   when: ansible_os_family == "RedHat"
-  tags: dnsmasq
 
-- name: Make sure Dnsmasq is running
-  service:
-    name: dnsmasq
-    state: started
-    enabled: yes
-  when: ansible_os_family == "RedHat"
-  tags: dnsmasq

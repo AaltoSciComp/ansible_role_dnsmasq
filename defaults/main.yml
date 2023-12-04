@@ -5,3 +5,4 @@ dnsmasq_domain_needed: true
 dnsmasq_bogus_priv: true
 dnsmasq_authoritative: false
 dnsmasq_expand_hosts: true
+dnsmasq_cache: 1500
